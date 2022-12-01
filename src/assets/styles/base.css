@@ -1,0 +1,28 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Hubot';
+  src: url('../fonts/Hubot-Sans-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mona';
+  src: url('../fonts/Mona-Sans-BoldNarrow.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html, body {
+    @apply bg-black text-white font-hubot;
+  }
+
+  svg {
+    @apply block max-w-full h-auto;
+  }
+}
