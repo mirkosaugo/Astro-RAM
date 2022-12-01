@@ -1,4 +1,6 @@
 ---
+import { Img } from "astro-imagetools/components";
+
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Container from '../components/Container.astro';
@@ -25,7 +27,7 @@ console.log('CHARACTERS:', results);
           return (
             <div>
               <p>{name}</p>
-              <img src={image} alt={name}>
+              <Img src={image} alt={name} width={300} height={300} placeholder="blurred" loading="lazy" />
             </div>
           )
         })
