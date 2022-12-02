@@ -25,4 +25,8 @@
   svg {
     @apply block max-w-full h-auto;
   }
+
+  img {
+    @apply block max-h-full w-full;
+  }
 }

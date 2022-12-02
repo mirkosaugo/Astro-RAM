@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
 
+// https://github.com/RafidMuhymin/astro-imagetools
 import { astroImageTools } from "astro-imagetools";
 
 // import react from '@astrojs/react';

@@ -17,22 +17,32 @@ console.log('CHARACTERS:', results);
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+  <Navbar />
+  <header class="absolute w-full h-[28rem] top-0 overflow-hidden">
+    <div class="absolute bottom-0 w-full z-[1]">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 74" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(0, 0, 0, 1)" offset="0%"/><stop stop-color="rgba(0, 0, 0, 1)" offset="100%"/></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,0L120,60L240,80L360,10L480,40L600,50L720,0L840,80L960,40L1080,60L1200,20L1320,70L1440,30L1560,40L1680,0L1800,70L1920,80L2040,90L2160,70L2280,80L2400,10L2520,40L2640,0L2760,80L2880,40L2880,100L2760,100L2640,100L2520,100L2400,100L2280,100L2160,100L2040,100L1920,100L1800,100L1680,100L1560,100L1440,100L1320,100L1200,100L1080,100L960,100L840,100L720,100L600,100L480,100L360,100L240,100L120,100L0,100Z"/></svg>
+    </div>
+    <div class="contrast-50 h-full">
+      <Img src="/bg.jpeg" alt="A starry night sky." objectFit="cover" objectPosition="50% 64%" />
+    </div>
+  </header>
+	<main class="pt-6">
     <Container>
-      <Navbar />
       <p class="mt-96">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab officia deserunt quidem explicabo nobis praesentium ipsum unde temporibus nihil aperiam debitis laborum provident numquam, sit deleniti iure! Ex, a ipsum.</p>
       <h2>Main characters</h2>
-      {
-        results.map(({name, image}: {name: string, image: string}) => {
-          return (
-            <div>
-              <p>{name}</p>
-              <Img src={image} alt={name} width={300} height={300} placeholder="blurred" loading="lazy" />
-            </div>
-          )
-        })
-      }
-      <p class="mt-96">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab officia deserunt quidem explicabo nobis praesentium ipsum unde temporibus nihil aperiam debitis laborum provident numquam, sit deleniti iure! Ex, a ipsum.</p>
+      <div class="grid grid-cols-5 gap-10">
+        {
+          results.map(({name, image}: {name: string, image: string}) => {
+            return (
+              <div>
+                <p>{name}</p>
+                <Img src={image} alt={name} width={300} height={300} placeholder="blurred" loading="lazy" />
+              </div>
+            )
+          })
+        }
+      </div>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab officia deserunt quidem explicabo nobis praesentium ipsum unde temporibus nihil aperiam debitis laborum provident numquam, sit deleniti iure! Ex, a ipsum.</p>
     </Container>
 	</main>
 </Layout>
