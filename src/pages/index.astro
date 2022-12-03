@@ -1,20 +1,20 @@
 ---
+// types
 import { IAllCharacters } from '../types/characters';
-
-import { Img } from "astro-imagetools/components";
-
+// libs
 import getCharacters from "src/lib/characters";
-
+// components
 import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import Container from '@components/Container.astro';
 import Hero from "@components/Hero.astro";
 import CharactersList from '@components/CharactersList.astro';
 
+// code
 const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters();
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Astro Rick And Morty">
   <Navbar />
   <Hero />
 	<main class="pt-6 pb-28">
