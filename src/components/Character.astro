@@ -15,7 +15,7 @@ const statusClasses = {
 }
 ---
 
-<div class="p-4 border-accent border rounded-md">
+<a href={`/character/${id}`} target="_self" rel="canonical" class="block p-4 border-accent border rounded-md">
   <Img
     src={image}
     alt={name}
@@ -30,4 +30,4 @@ const statusClasses = {
     <span class="text-xs block ml-1">{status}</span>
   </div>
 
-</div>
+</a>
