@@ -6,8 +6,6 @@ import tailwind from "@astrojs/tailwind";
 // https://github.com/RafidMuhymin/astro-imagetools
 import { astroImageTools } from "astro-imagetools";
 
-// import react from '@astrojs/react';
-
 // https://astro.build/config
 export default defineConfig({
   // experimental: {
