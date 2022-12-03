@@ -9,6 +9,7 @@ import Layout from '@layouts/Layout.astro';
 import Navbar from '@components/Navbar.astro';
 import Container from '@components/Container.astro';
 import Hero from "@components/Hero.astro";
+import CharactersList from '@components/CharactersList.astro';
 
 const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters();
 ---
@@ -19,35 +20,9 @@ const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters
 	<main class="pt-6 pb-28">
     <Container>
       <div class="pt-96">
-        <h2 class="font-mona text-7xl uppercase my-16">Main characters</h2>
-        <div class="grid grid-cols-5 gap-10">
-          {
-            mainCharacters.map(({name, image}: {name: string, image: string}) => {
-              return (
-                <div>
-                  <p>{name}</p>
-                  <Img src={image} alt={name} width={300} height={300} placeholder="blurred" loading="lazy" />
-                </div>
-              )
-            })
-          }
-        </div>
-
+        <CharactersList title="Main Characters" items={mainCharacters} />
         <div class="my-10 inline-block"></div>
-
-        <h2 class="font-mona text-7xl uppercase my-16">aliens</h2>
-        <div class="grid grid-cols-5 gap-10">
-          {
-            aliensCharacters.map(({name, image}: {name: string, image: string}) => {
-              return (
-                <div>
-                  <p>{name}</p>
-                  <Img src={image} alt={name} width={300} height={300} placeholder="blurred" loading="lazy" />
-                </div>
-              )
-            })
-          }
-        </div>
+        <CharactersList title="Aliens" items={aliensCharacters} />
       </div>
     </Container>
 	</main>

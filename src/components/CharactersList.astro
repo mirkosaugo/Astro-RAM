@@ -1,0 +1,25 @@
+---
+interface Props {
+  title?: string;
+  items:  ICahracter[];
+}
+
+import { ICahracter } from '../types/characters';
+
+import { Img } from "astro-imagetools/components";
+
+const { title, items }: Props = Astro.props;
+---
+{ title ? <h2 class="font-mona text-7xl uppercase my-16">{title}</h2> : null }
+<div class="grid grid-cols-5 gap-10">
+  {
+    items.map(({name, image}: {name: string, image: string}) => {
+      return (
+        <div>
+          <p>{name}</p>
+          <Img src={image} alt={name} width={300} height={300} placeholder="blurred" loading="lazy" />
+        </div>
+      )
+    })
+  }
+</div>
