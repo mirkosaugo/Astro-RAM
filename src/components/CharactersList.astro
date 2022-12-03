@@ -1,25 +1,21 @@
 ---
+// types
+import { ICharacter } from '@localTypes/characters';
 interface Props {
   title?: string;
-  items:  ICahracter[];
+  items: ICharacter[];
 }
+// components
+import Character from '@components/Character.astro';
 
-import { ICahracter } from '../types/characters';
-
-import { Img } from "astro-imagetools/components";
-
+// code
 const { title, items }: Props = Astro.props;
 ---
-{ title ? <h2 class="font-mona text-7xl uppercase my-16">{title}</h2> : null }
-<div class="grid grid-cols-5 gap-10">
+{ title ? <h2 class="font-mona text-7xl uppercase mt-16 mb-10">{title}</h2> : null }
+<div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 wide:grid-cols-5 gap-5">
   {
-    items.map(({name, image}: {name: string, image: string}) => {
-      return (
-        <div>
-          <p>{name}</p>
-          <Img src={image} alt={name} width={300} height={300} placeholder="blurred" loading="lazy" />
-        </div>
-      )
+  items.map(({name, image, status}: {name: string, image: string, status: string }) => {
+      return <Character id={2} type={name} name={name} image={image} status={status} species={name} gender={name} />
     })
   }
 </div>

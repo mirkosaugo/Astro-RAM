@@ -1,0 +1,33 @@
+---
+// types
+import { ICharacter } from '@localTypes/characters';
+interface Props extends ICharacter {}
+
+// components
+import { Img } from "astro-imagetools/components";
+
+const { image, name, id, status }: ICharacter = Astro.props;
+
+const statusClasses = {
+  alive: 'bg-lime-400 border-lime-100',
+  dead: 'bg-red-500 border-red-200',
+  unknown: 'bg-yellow-400 border-yellow-100'
+}
+---
+
+<div class="p-4 border-accent border rounded-md">
+  <Img
+    src={image}
+    alt={name}
+    width={300}
+    height={300}
+    placeholder="blurred"
+    loading="lazy"
+  />
+  <p class="font-mona text-2xl uppercase mt-3 truncate">{name}</p>
+  <div class="flex items-center">
+    <span class={`relative block rounded-full w-4 h-4 border-4 ${statusClasses[status.toLowerCase()]}`}></span>
+    <span class="text-xs block ml-1">{status}</span>
+  </div>
+
+</div>
