@@ -1,0 +1,32 @@
+---
+// types
+import { IAllCharacters, ICharacter } from '@localTypes/characters';
+interface Props extends ICharacter {}
+// libs
+import getCharacters from "src/lib/characters";
+// components
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+
+// code
+export async function getStaticPaths() {
+  const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters();
+  return [...mainCharacters, ...aliensCharacters].map((character: ICharacter) => ({
+    params: {
+      id: character.id.toString(),
+    },
+    props: character,
+  }));
+}
+
+
+const { id }: ICharacter = Astro.props;
+---
+
+<Layout title="Astro Rick And Morty">
+	<main class="pt-6 pb-28">
+    <Container>
+      <h1 class="text-4xl font-bold text-center">Character: {id}</h1>
+    </Container>
+	</main>
+</Layout>

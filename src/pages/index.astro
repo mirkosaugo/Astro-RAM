@@ -5,7 +5,6 @@ import { IAllCharacters } from '@localTypes/characters';
 import getCharacters from "src/lib/characters";
 // components
 import Layout from '@layouts/Layout.astro';
-import Navbar from '@components/Navbar.astro';
 import Container from '@components/Container.astro';
 import Hero from "@components/Hero.astro";
 import CharactersList from '@components/CharactersList.astro';
@@ -15,7 +14,6 @@ const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters
 ---
 
 <Layout title="Astro Rick And Morty">
-  <Navbar />
   <Hero />
 	<main class="pt-6 pb-28">
     <Container>
