@@ -5,7 +5,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@types/*": ["src/types/*"]
+      "@localTypes/*": ["src/types/*"]
     }
   }
 }

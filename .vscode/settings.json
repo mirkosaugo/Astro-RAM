@@ -9,5 +9,15 @@
     "javascript": "javascript",
     "html": "HTML"
   },
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "[typescript]": {
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "javascript.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
 }
