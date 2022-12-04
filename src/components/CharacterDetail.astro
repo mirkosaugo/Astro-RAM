@@ -1,0 +1,29 @@
+---
+// types
+import { ICharacter } from '@localTypes/characters';
+interface Props extends ICharacter {}
+
+// components
+import { Img } from "astro-imagetools/components";
+import CharacterStatus from './CharacterStatus.astro';
+
+// code
+const { image, name, id, status } = Astro.props;
+---
+
+<div class="grid grid-cols-3">
+  <div>
+    <Img
+    src={image}
+    alt={name}
+    width={300}
+    height={300}
+    placeholder="blurred"
+    loading="lazy"
+  />
+  </div>
+  <div>
+    <p class="font-mona text-2xl uppercase mt-3 truncate">{name}</p>
+    <CharacterStatus status={status} />
+  </div>
+</div>

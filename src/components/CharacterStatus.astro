@@ -1,0 +1,20 @@
+---
+// types
+import { ICharacter } from '@localTypes/characters';
+interface Props {
+  status: ICharacter["status"];
+}
+
+// code
+const { status } = Astro.props;
+const statusClasses = {
+  alive: 'bg-lime-400 border-lime-100',
+  dead: 'bg-red-500 border-red-200',
+  unknown: 'bg-yellow-400 border-yellow-100'
+}
+---
+
+<div class="flex items-center">
+  <span class={`relative block rounded-full w-4 h-4 border-4 ${statusClasses[status.toLowerCase()]}`}></span>
+  <span class="text-xs block ml-1">{status}</span>
+</div>

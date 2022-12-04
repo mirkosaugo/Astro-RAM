@@ -22,3 +22,5 @@ export interface IAllCharacters {
   mainCharacters: ICharacter[];
   aliensCharacters: ICharacter[];
 }
+
+export type ICharacterCard = Omit<ICharacter, "species" | "type" | "gender">;
