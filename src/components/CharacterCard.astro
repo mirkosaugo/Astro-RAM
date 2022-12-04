@@ -1,12 +1,14 @@
 ---
 // types
 import { ICharacter } from '@localTypes/characters';
-interface Props extends ICharacter {}
+type ICharacterCard = Omit<ICharacter, "species" | "type" | "gender">;
+
+interface Props extends ICharacterCard {}
 
 // components
 import { Img } from "astro-imagetools/components";
 
-const { image, name, id, status }: ICharacter = Astro.props;
+const { image, name, id, status } = Astro.props;
 
 const statusClasses = {
   alive: 'bg-lime-400 border-lime-100',
