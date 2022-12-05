@@ -1,7 +1,12 @@
 {
-  "name": "@example/basics",
-  "type": "module",
+  "name": "@astro/rickandmorty",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mirkosaugo/Astro-RAM.git"
+  },
+  "author": "Mirko Saugo <hi@mynameismirko.it> (https://mynameismirko.it/)",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "astro dev",
