@@ -20,7 +20,7 @@ const prevCharacter: ICharacter[] | [undefined] = [allCharacters[findCurrentInde
 const nextCharacter: ICharacter[] | [undefined] = [allCharacters[findCurrentIndex + 1]] || [];
 ---
 
-<div class="grid grid-cols-1 gap-1 tablet:grid-cols-2 tablet:gap-2 desktop:grid-cols-1">
+<div class="grid grid-cols-2 gap-1 mt-16 tablet:grid-cols-4 tablet:gap-4 desktop:grid-cols-1 desktop:mt-0">
   {
     [...prevCharacter, ...nextCharacter].filter(Boolean).map((character: ICharacter) => {
       return (
