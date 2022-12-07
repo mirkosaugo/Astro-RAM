@@ -40,7 +40,7 @@ const SearchCharacter = () => {
             <input
               ref={inputRef}
               type="search"
-              className="block p-2.5 w-full z-20 text-2xl text-gray-900 bg-primary rounded-lg border focus:outline-none"
+              className="block py-2.5 px-6 w-full z-20 text-2xl text-gray-900 bg-primary rounded-lg border focus:outline-none"
               placeholder="Rick, Morty, etc..."
               required
             />
