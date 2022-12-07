@@ -3,16 +3,39 @@
 import { ICharacter } from '@localTypes/characters';
 interface Props extends ICharacter {}
 
+type TDetails = {
+  [key: string]: string
+}
+
 // components
 import { Img } from "astro-imagetools/components";
 import CharacterStatus from './CharacterStatus.astro';
 
 // code
-const { image, name, id, status } = Astro.props;
+const {
+  image,
+  name,
+  status,
+  species: specie,
+  type,
+  gender,
+  origin: { name: origin = ''} = {},
+  location: { name: location = ''} = {},
+  episode = []
+} = Astro.props;
+
+const detailsProps: TDetails = {
+  specie,
+  type,
+  gender,
+  origin,
+  location
+};
+
 ---
 
-<div class="grid grid-cols-3">
-  <div>
+<div class="grid grid-cols-1 gap-2 tablet:grid-cols-12 tablet:gap-4">
+  <div class="tablet:col-span-4">
     <Img
     src={image}
     alt={name}
@@ -22,8 +45,25 @@ const { image, name, id, status } = Astro.props;
     loading="lazy"
   />
   </div>
-  <div>
-    <p class="font-mona text-2xl uppercase mt-3 truncate">{name}</p>
+  <div class="tablet:col-span-8">
+    <p class="font-mona text-4xl tablet:text-6xl uppercase mb-3 pt-4 tablet:pt-0">{name}</p>
     <CharacterStatus status={status} />
+    <div class="mt-6">
+      {
+        Object.entries(detailsProps).map(([key, value]: [key: keyof TDetails, value: string]) => {
+          return (
+            value ? <p class="mb-1"><span class="font-mona uppercase text-2xl text-secondary">{key}:</span><span class="text-xl inline-block ml-2 text-accent">{value}</span></p> : null
+          )
+        })
+      }
+    </div>
+    {
+      episode.length > 0 ? <p class="mb-1">
+        <span class="font-mona uppercase text-2xl text-secondary">Number of Episodes:</span>
+        <span class="text-xl inline-block ml-2 text-accent">
+          { episode.length }
+        </span></p>
+      : null
+    }
   </div>
 </div>
