@@ -37,7 +37,7 @@ const {
 }: ICharacter = Astro.props;
 ---
 
-<Layout title="Astro Rick And Morty">
+<Layout title={`Astro Rick And Morty | ${name}`}>
 	<main class="pt-6 pb-28">
     <Container>
       <section class="pt-12">
