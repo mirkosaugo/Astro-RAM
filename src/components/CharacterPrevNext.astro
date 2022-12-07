@@ -1,0 +1,34 @@
+---
+// types
+import { ICharacter, IAllCharacters } from '@localTypes/characters';
+
+interface Props {
+  id: ICharacter["id"];
+}
+// libs
+import getCharacters from "src/lib/characters";
+// components
+import CharacterCard from './CharacterCard.astro';
+
+// code
+const { id } = Astro.props;
+
+const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters();
+const allCharacters: ICharacter[] = [...mainCharacters, ...aliensCharacters];
+const findCurrentIndex = allCharacters.findIndex((character: ICharacter) => character.id === id)
+const prevCharacter: ICharacter[] | [undefined] = [allCharacters[findCurrentIndex - 1]];
+const nextCharacter: ICharacter[] | [undefined] = [allCharacters[findCurrentIndex + 1]] || [];
+---
+
+<div class="grid grid-cols-1 gap-1 tablet:grid-cols-2 tablet:gap-2 desktop:grid-cols-1">
+  {
+    [...prevCharacter, ...nextCharacter].filter(Boolean).map((character: ICharacter) => {
+      return (
+        <CharacterCard
+          id={character.id}
+          name={character.name}
+          image={character.image}
+          status={character.status}
+        />)})
+    }
+</div>

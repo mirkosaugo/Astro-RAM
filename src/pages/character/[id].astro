@@ -2,12 +2,15 @@
 // types
 import { IAllCharacters, ICharacter } from '@localTypes/characters';
 interface Props extends ICharacter {}
+
 // libs
 import getCharacters from "src/lib/characters";
+
 // components
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import CharacterDetail from '@components/CharacterDetail.astro';
+import CharacterPrevNext from '@components/CharacterPrevNext.astro';
 
 // code
 export async function getStaticPaths() {
@@ -54,10 +57,9 @@ const {
             />
           </div>
           <div class="desktop:col-span-3">
-            <div class="grid grid-cols-1 gap-1 tablet:grid-cols-2 tablet:gap-2 desktop:grid-cols-1">
-              <div>ELEMENT 1</div>
-              <div>ELEMENT 2</div>
-            </div>
+            <CharacterPrevNext
+              id={id}
+            />
           </div>
         </div>
       </section>
