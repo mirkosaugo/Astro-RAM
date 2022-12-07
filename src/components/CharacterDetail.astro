@@ -46,21 +46,21 @@ const detailsProps: TDetails = {
   />
   </div>
   <div class="tablet:col-span-8">
-    <p class="font-mona text-4xl tablet:text-6xl uppercase mb-3 pt-4 tablet:pt-0">{name}</p>
+    <p class="pt-4 mb-3 text-4xl uppercase font-mona tablet:text-6xl tablet:pt-0">{name}</p>
     <CharacterStatus status={status} />
     <div class="mt-6">
       {
         Object.entries(detailsProps).map(([key, value]: [key: keyof TDetails, value: string]) => {
           return (
-            value ? <p class="mb-1"><span class="font-mona uppercase text-2xl text-secondary">{key}:</span><span class="text-xl inline-block ml-2 text-accent">{value}</span></p> : null
+            value ? <p class="mb-1"><span class="text-2xl uppercase font-mona text-secondary">{key}:</span><span class="inline-block ml-2 text-xl text-accent">{value}</span></p> : null
           )
         })
       }
     </div>
     {
       episode.length > 0 ? <p class="mb-1">
-        <span class="font-mona uppercase text-2xl text-secondary">Number of Episodes:</span>
-        <span class="text-xl inline-block ml-2 text-accent">
+        <span class="text-2xl uppercase font-mona text-secondary">Number of Episodes:</span>
+        <span class="inline-block ml-2 text-xl text-accent">
           { episode.length }
         </span></p>
       : null
