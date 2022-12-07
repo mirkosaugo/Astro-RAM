@@ -21,7 +21,13 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
     <meta name="keywords" content="Mirko Saugo, Rick and Morty, Astrojs">
     <meta name="author" content="Mirko Saugo">
+
 		<title>{title}</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://astro-rickandmorty.netlify.app">
+    <meta property="og:title" content={title}>
+    <meta property="og:image" content="https://astro-rickandmorty.netlify.app/cover.jpg">
 	</head>
 	<body>
     <Navbar />
