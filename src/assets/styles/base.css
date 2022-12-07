@@ -19,14 +19,29 @@
 
 @layer base {
   html, body {
-    @apply bg-black text-white font-hubot;
+    @apply text-white bg-black font-hubot;
   }
 
   svg {
-    @apply block max-w-full h-auto;
+    @apply block h-auto max-w-full;
   }
 
   img {
-    @apply block max-h-full w-full;
+    @apply block w-full max-h-full;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary;
   }
 }
