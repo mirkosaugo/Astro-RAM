@@ -1,5 +1,7 @@
 # Welcome to [Astro Rick And Morty]
 
+![cover](./public/cover.jpg)
+
 ## 🤓 Why this
 
 I made this small project to test Astro framework, with a new web architecture called "Component Island"
