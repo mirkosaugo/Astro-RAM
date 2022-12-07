@@ -2,7 +2,7 @@ const API_URL = import.meta.env.PUBLIC_RICKANDMORTYAPI;
 
 import { ICharacter, IAllCharacters } from '../types/characters';
 
-export default async function getCharacters(): Promise<IAllCharacters> {
+export async function getCharacters(): Promise<IAllCharacters> {
   try {
     const mainCharactersResponse = await fetch(`${API_URL}/character/1,2,3,4,5`);
     const mainCharacters: ICharacter[] = await mainCharactersResponse.json();
@@ -20,6 +20,17 @@ export default async function getCharacters(): Promise<IAllCharacters> {
       mainCharacters: [],
       aliensCharacters: []
     };
+  }
+};
+
+export async function searchCharacter(name: string): Promise<ICharacter[] | []> {
+  if(!name) return Promise.resolve([]);
+  try {
+    const response = await fetch(`${API_URL}/character/?name=${name}`);
+    const { results }: { results: ICharacter[]} = await  response.json();
+    return results;
+  } catch (error) {
+    return [];
   }
 };
 

@@ -2,12 +2,13 @@
 // types
 import { IAllCharacters } from '@localTypes/characters';
 // libs
-import getCharacters from "src/lib/characters";
+import { getCharacters } from "src/lib/characters";
 // components
 import Layout from '@layouts/Layout.astro';
 import Container from '@components/Container.astro';
 import Hero from "@components/Hero.astro";
 import CharactersList from '@components/CharactersList.astro';
+import SearchCharacter from '@components/react/SearchCharacter';
 
 // code
 const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters();
@@ -19,8 +20,11 @@ const { mainCharacters, aliensCharacters }: IAllCharacters = await getCharacters
     <Container>
       <div class="pt-96">
         <CharactersList title="Main Characters" items={mainCharacters} />
-        <div class="my-10 inline-block"></div>
+        <div class="inline-block my-10"></div>
         <CharactersList title="Aliens" items={aliensCharacters} />
+      </div>
+      <div>
+        <SearchCharacter client:visible />
       </div>
     </Container>
 	</main>

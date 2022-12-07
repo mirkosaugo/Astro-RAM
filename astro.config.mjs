@@ -6,6 +6,9 @@ import tailwind from "@astrojs/tailwind";
 // https://github.com/RafidMuhymin/astro-imagetools
 import { astroImageTools } from "astro-imagetools";
 
+// react
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   // vite: {},
@@ -15,5 +18,5 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), astroImageTools]
+  }), astroImageTools, react()]
 });
