@@ -18,7 +18,7 @@ const SearchCharacter = () => {
     <div className="mt-48">
       <div className="flex items-center mb-10 head">
         <h3 className="mr-4 text-3xl uppercase font-mona tablet:text-5xl">
-          Search Character
+          Search a Character
         </h3>
         <svg
           className="w-6 h-6"

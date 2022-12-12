@@ -1,5 +1,8 @@
 {
   "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "css.lint.unknownAtRules": "ignore",
   "css.validate": false,
   "editor.quickSuggestions": {
