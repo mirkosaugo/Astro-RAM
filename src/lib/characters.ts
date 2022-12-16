@@ -27,8 +27,8 @@ export async function searchCharacter(name: string): Promise<ICharacter[] | []> 
   if(!name) return Promise.resolve([]);
   try {
     const response = await fetch(`${API_URL}/character/?name=${name}`);
-    const { results }: { results: ICharacter[]} = await  response.json();
-    return results;
+    const { results }: { results: ICharacter[]} = await response.json();
+    return results || [];
   } catch (error) {
     return [];
   }

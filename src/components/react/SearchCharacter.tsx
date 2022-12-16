@@ -2,9 +2,25 @@ import React, { useRef, useState } from 'react'
 import { searchCharacter } from "src/lib/characters"
 import { ICharacter } from '@localTypes/characters';
 
+const SearchResults = ({ results }: { results: ICharacter[] | [] }) => {
+  return (
+    results.length > 0 ? (
+      <div className="grid gap-4 mt-12 tablet:grid-cols-4 laptop:grid-cols-6 desktop:grid-cols-8 ">
+        { results.map((character: ICharacter) => (
+          <div className="flex items-center" key={character.id}>
+            <img className="w-12 h-12 mr-4 rounded-full" src={character.image} alt={character.name} lazy />
+            <h1>{character.name}</h1>
+          </div>
+        ))
+        }
+      </div>
+    ) : (<p className="mt-12 text-red-400">NO RESULTS</p>)
+  )
+}
+
 const SearchCharacter = () => {
   const inputRef = useRef<HTMLInputElement>(null)
-  const [results, setResults] = useState<ICharacter[] | []>([]);
+  const [results, setResults] = useState<ICharacter[] | [] | undefined>();
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -68,17 +84,7 @@ const SearchCharacter = () => {
           </div>
         </div>
       </form>
-
-      <div className="grid gap-4 mt-12 tablet:grid-cols-4 laptop:grid-cols-6 desktop:grid-cols-8 ">
-        {results.length > 0 ? (
-          results.map((character: ICharacter) => (
-            <div className="flex items-center" key={character.id}>
-              <img className="w-12 h-12 mr-4 rounded-full" src={character.image} alt={character.name} lazy />
-              <h1>{character.name}</h1>
-            </div>
-          ))) : null
-        }
-      </div>
+      { results ? <SearchResults results={results} /> : null }
     </div>
   )
 }
