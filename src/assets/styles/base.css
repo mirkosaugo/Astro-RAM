@@ -27,7 +27,7 @@
   }
 
   img {
-    @apply block w-full max-h-full;
+    @apply block w-full max-h-full transition-all duration-300;
   }
 
   /* width */
@@ -43,5 +43,9 @@
   /* Handle */
   ::-webkit-scrollbar-thumb {
     @apply bg-secondary;
+  }
+
+  a:hover img {
+    filter: invert(1) hue-rotate(-70deg);
   }
 }

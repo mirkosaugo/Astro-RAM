@@ -1,19 +1,44 @@
-<div class="fixed inset-0 flex-col items-center justify-center hidden w-full h-full p-12 bg-black tablet:p-0 tablet:flex tablet:justify-between tablet:flex-row tablet:relative tablet:inset-auto tablet:h-auto tablet:w-auto tablet:bg-transparent" id="menu" >
-  <a class="text-2xl tracking-wider uppercase transition-all tablet:text-base font-mona text-secondary laptop:text-2xl hover:text-shadow-accent duration-400" href=".">Read the article</a>
-  <a class="mt-4 text-2xl tracking-wider uppercase transition-all tablet:mt-0 tablet:text-base font-mona text-secondary laptop:text-2xl hover:text-shadow-accent duration-400" href="https://mynameismirko.it" target="_blank">About Me</a>
+<div
+  class="fixed inset-0 flex-col items-center justify-center hidden w-full h-full p-12 bg-black tablet:p-0 tablet:flex tablet:justify-between tablet:flex-row tablet:relative tablet:inset-auto tablet:h-auto tablet:w-auto tablet:bg-transparent"
+  id="menu"
+>
+  <a
+    class="text-2xl tracking-wider uppercase transition-all tablet:text-base font-mona text-secondary laptop:text-2xl hover:text-shadow-accent duration-400"
+    href="https://dev.to/mirkosaugo/astro-lets-try-it-23m2"
+    target="_blank">Read the article</a
+  >
+  <a
+    class="mt-4 text-2xl tracking-wider uppercase transition-all tablet:mt-0 tablet:text-base font-mona text-secondary laptop:text-2xl hover:text-shadow-accent duration-400"
+    href="https://mynameismirko.it"
+    target="_blank">About Me</a
+  >
 </div>
-<button data-collapse-toggle="menu" type="button" class="z-10 inline-flex items-center text-xm text-secondary tablet:hidden" aria-controls="mega-menu" aria-expanded="false">
-    <span class="sr-only">Open menu</span>
-    <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+<button
+  data-collapse-toggle="menu"
+  type="button"
+  class="z-10 inline-flex items-center text-xm text-secondary tablet:hidden"
+  aria-controls="mega-menu"
+  aria-expanded="false"
+>
+  <span class="sr-only">Open menu</span>
+  <svg
+    aria-hidden="true"
+    class="w-8 h-8"
+    fill="currentColor"
+    viewBox="0 0 20 20"
+    xmlns="http://www.w3.org/2000/svg"
+    ><path
+      fill-rule="evenodd"
+      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+      clip-rule="evenodd"></path>
+  </svg>
 </button>
 
 <script>
-  const button = document.querySelector('[data-collapse-toggle="menu"]');
-  const menu = document.querySelector('#menu');
+  const button = document.querySelector('[data-collapse-toggle="menu"]')
+  const menu = document.querySelector('#menu')
   button.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-    menu.classList.toggle('flex');
-  });
+    menu.classList.toggle('hidden')
+    menu.classList.toggle('flex')
+  })
 </script>
-
-
